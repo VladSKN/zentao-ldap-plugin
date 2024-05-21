@@ -46,9 +46,8 @@ class ldapModel extends model
         if ($ds) {
             ldap_set_option($ds,LDAP_OPT_PROTOCOL_VERSION, empty($config->version) ? $this->config->ldap->version : $config->version);
             ldap_bind($ds, $config->bindDN, $config->bindPWD);
-            $sf = "($config->uid=*)";
-            $attrs = [$config->uid, $config->mail, $config->name,$config->mobile];
-
+            $sf = "(&(memberOf=cn=zentao*)(objectClass=person)($config->uid=*))";
+	    $attrs = [$config->uid, $config->mail, $config->name,$config->mobile];
             $rlt = ldap_search($ds, $config->baseDN, $sf, $attrs);
             $data = ldap_get_entries($ds, $rlt);
             ldap_unbind($ds);
