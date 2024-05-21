@@ -11,10 +11,6 @@
 3. Разделите поля **Протокол**, **Порт**.
 4. Сохранение данных о новом номере мобильного телефона
 
-## Инструкции
-Обратитесь к документации:
-- [документация](https://www.zentao.net/book/zentaopmshelp/68.html#3)
-
 ### Инструкция по использованию
 Вам нужно заархивировать каталог `ldap` или запустить скрипт `package.sh` непосредственно из текущего каталога.
 ### Конфигурация меню
@@ -44,7 +40,7 @@ EX: `$lang->admin->menuList->company['subMenu']['xxxx'] => array('link' => «{$l
 | порт  | 	389 | T | |
 | searchDN  | ou=users,dc=test,dc=com | T| |
 | BindDN  | cn=admin,dc=test,dc=com | T | |
-| BindDN 密码  | ou=users,dc=test,dc=com | T | | 
+| BindDN  | ou=users,dc=test,dc=com | T | | 
 |||||
 |Конфигурация||||
 |||||
